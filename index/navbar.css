@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .contact {
@@ -123,9 +123,9 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color:rgb(6, 39, 6) !important;
+    color:rgba(22, 24, 24, 0.87) !important;
     transform: scale(1.07);
-    background-color:rgba(170, 165, 165, 0.56);
+    background-color:rgba(199, 206, 206, 0.37);
     border-radius: 2vh;
     
 }
