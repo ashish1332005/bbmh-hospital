@@ -38,7 +38,7 @@
 
 
 .slide-button{
-    top:40%;
+    top:60%;
     height: 50px;
     width: 50px;
     color: #fff;
@@ -52,6 +52,15 @@ outline:none;
 transform: translatey(-50%);
 position: absolute;
 
+}
+
+@media(max-width:748px){
+.slide-button{
+    top:30%;
+    height: 50px;
+    width: 50px;
+  
+}
 }
 
 .slide-button:hover{
