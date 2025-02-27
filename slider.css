@@ -1,0 +1,146 @@
+
+
+.doctors{
+    height: 80vh;
+    margin: 4vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.doctors h3{
+    color: #099178;
+   
+}
+
+.doctors p{
+    padding: 2vh;
+    font-weight: 600;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.doctors a{
+    text-decoration: none;
+    color:rgb(6, 145, 231);
+}
+.slide-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.doctors{
+    max-width: 1300px;
+    width: 95%;
+}
+
+
+.slide-button{
+    top:40%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    background: #000;
+    font-size: 2.2rem;
+    cursor: pointer;
+border-radius: 50%;
+position: absolute;
+outline:none;
+transform: translatey(-50%);
+position: absolute;
+
+}
+
+.slide-button:hover{
+    background: #444;
+}
+
+.slide-button {
+    position: absolute;
+  
+    transform: translateY(-50%);
+    /* other styles */
+}
+ #prev-slide{
+left: 2px;
+}
+
+#next-slide{
+    right: 2px;
+}
+
+.gallary-Wrap .image-list{
+    display: grid;
+   gap: 18px;
+   font-size: medium;
+overflow: hidden;
+scrollbar-width: none;
+    grid-template-columns: repeat(18,1fr);
+    overflow-x: scroll;
+}
+
+.image-item{
+    border: 2px solid #00A877;
+    border-radius: 8px;
+
+}
+
+.gallary-Wrap .image-list::-webkit-scrollbar{
+    display: none;
+}
+
+.gallary-Wrap .image-list .image-item{
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.doctors .slider-scrollbar{
+    height:24px;
+    width: 100%;
+    background: rgba(236, 234, 234, 0);
+    display: flex;
+    align-items: center;
+
+}
+.slider-scrollbar .scrollbar-track{
+  
+    height: 4px;
+    width: 100%;
+    background:#ccc ;
+    position: relative;
+    border-radius: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb:active{
+    cursor: grabbing;
+    height:8px;
+    top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background:#000 ;
+    border-radius: inherit;
+    cursor: grab;
+}
+
+@media(max-width:1023px){
+    .gallary-Wrap  .slide-button{
+        display: none;
+    }
+    .gallary-Wrap .image-list{
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .gallary-Wrap .image-list .image-item{
+        width: 325px;
+        height: 400px;
+        object-fit: cover;
+    }
+}
