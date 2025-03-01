@@ -85,4 +85,20 @@ const initSlider = () => {
   };
   
   window.addEventListener("load", initSlider);
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navCollapse = document.querySelector(".navbar-collapse");
+
+    hamburger.addEventListener("click", function () {
+        this.classList.toggle("active"); // For the animated cross effect
+        navCollapse.classList.toggle("show"); // Bootstrap's way to show/hide navbar
+    });
+
+    // Close the menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!hamburger.contains(event.target) && !navCollapse.contains(event.target)) {
+            hamburger.classList.remove("active");
+            navCollapse.classList.remove("show");
+        }
+    });
+});
