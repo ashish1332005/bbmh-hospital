@@ -102,3 +102,49 @@ const initSlider = () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".dropdown-toggle").forEach(function (dropdown) {
+      dropdown.addEventListener("click", function () {
+          let arrow = this.querySelector(".arrow-icon");
+          if (arrow) {
+              arrow.classList.toggle("rotate");
+          }
+      });
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".dropdown-toggle").forEach(function (dropdown) {
+      dropdown.addEventListener("click", function (event) {
+          let parentDropdown = this.parentElement;
+          
+          // Toggle the "show" class on the parent dropdown
+          if (parentDropdown.classList.contains("show")) {
+              parentDropdown.classList.remove("show");
+          } else {
+              // Close other open dropdowns
+              document.querySelectorAll(".dropdown.show").forEach(function (openDropdown) {
+                  openDropdown.classList.remove("show");
+              });
+
+              parentDropdown.classList.add("show");
+          }
+
+          // Prevent default Bootstrap behavior
+          event.preventDefault();
+      });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+      if (!event.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown.show").forEach(function (dropdown) {
+              dropdown.classList.remove("show");
+          });
+      }
+  });
+});
