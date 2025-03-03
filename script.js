@@ -136,3 +136,35 @@ document.addEventListener("click", function (event) {
     }
 });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+      const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+      const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+      let isMobile = window.matchMedia("(max-width: 992px)").matches;
+
+      dropdownToggle.addEventListener("click", function (event) {
+          if (isMobile) {
+              if (!dropdown.classList.contains("show")) {
+                  event.preventDefault(); // Stop immediate navigation
+                  dropdown.classList.add("show");
+                  dropdownMenu.classList.add("show");
+              } else {
+                  window.location.href = this.getAttribute("href"); // Navigate on second click
+              }
+          }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+          if (!event.target.closest(".dropdown")) {
+              document.querySelectorAll(".dropdown.show").forEach(function (dropdown) {
+                  dropdown.classList.remove("show");
+                  dropdown.querySelector(".dropdown-menu").classList.remove("show");
+              });
+          }
+      });
+  });
+});
