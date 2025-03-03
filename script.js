@@ -102,41 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
-    const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-
-    // Show dropdown on hover
-    dropdown.addEventListener("mouseenter", function () {
-        dropdown.classList.add("show");
-        dropdownMenu.classList.add("show");
-    });
-
-    dropdown.addEventListener("mouseleave", function () {
-        dropdown.classList.remove("show");
-        dropdownMenu.classList.remove("show");
-    });
-
-    // Allow clicking "Services" to open its link
-    dropdownToggle.addEventListener("click", function (event) {
-        if (!event.target.closest(".dropdown-menu")) {
-            window.location.href = this.getAttribute("href");
-        }
-    });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", function (event) {
-    if (!event.target.closest(".dropdown")) {
-        document.querySelectorAll(".dropdown.show").forEach(function (dropdown) {
-            dropdown.classList.remove("show");
-            dropdown.querySelector(".dropdown-menu").classList.remove("show");
-        });
-    }
-});
-});
-
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".dropdown").forEach(function (dropdown) {
